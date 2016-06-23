@@ -39,10 +39,13 @@ const onChangePassword = (event) => {
   .fail(ui.failure);
 };
 
-// const showTweets = (event) => {
-//   event.preventDefault();
-//   //$('.content').show();
-// };
+const showTweets = (event) => {
+  event.preventDefault();
+  api.getTimeLine()
+  .done(ui.getTimeLineSuccess)
+  .fail(ui.failure);
+  //$('.content').show();
+};
 
 const onSendTweet = (event) => {
   event.preventDefault();
@@ -57,8 +60,10 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  //$('#get-tweets').on('click', showTweets);
+  $('#send-tweets').on('submit', example.getTweetText);
+  $('#get-tweets').on('click', showTweets);
   $('#send-tweets').on('submit', onSendTweet);
+
 };
 //
 module.exports = {

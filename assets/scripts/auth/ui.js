@@ -22,18 +22,27 @@ const signInSuccess = (data) => {
   console.log(app.user);
   $('.emoji-list').show();
   $('.greeting').append("🖐 " + app.user.email + "❗");
-  $('.tweets').append(index.getTweets).show();
+  // $('.tweets').append(index.getTweets);
+  $('.modal').modal('hide') ;
 };
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
   $('.emoji-list, .tweets, .greeting').hide();
+  $('.modal').modal('show') ;
 };
+
+const getTimeLineSuccess = (data) => {
+  app.tweets = data.tweets;
+  console.log(app.tweets);
+};
+
 
 module.exports = {
   success,
   failure,
   signInSuccess,
-  signOutSuccess
+  signOutSuccess,
+  getTimeLineSuccess
 };

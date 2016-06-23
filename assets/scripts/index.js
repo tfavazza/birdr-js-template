@@ -9,13 +9,13 @@ const authEvents = require('./auth/events.js');
 const app = require('./app.js');
 
 
-let getTweets = function(){
-  return $.ajax({
-    url: app.host + "/tweets",
-    method: 'GET',
-    dataType: 'json'
-  }).done(example.displayTweets);
-};
+// let getTweets = function(){
+//   return $.ajax({
+//     url: app.host + "/tweets",
+//     method: 'GET',
+//     dataType: 'json'
+//   }).done(example.displayTweets(app.tweets));
+// };
 
 
 $(() => {
@@ -23,5 +23,5 @@ $(() => {
 });
 
 module.exports = {
-  getTweets
+  // getTweets
 };
