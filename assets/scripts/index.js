@@ -4,4 +4,24 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
+const example = require('./example.js');
+const authEvents = require('./auth/events.js');
+const app = require('./app.js');
+
+
+let getTweets = function(){
+  return $.ajax({
+    url: app.host + "/tweets",
+    // method: 'GET',
+    // dataType: 'json'
+  }).done(example.displayTweets);
+};
+
+
+$(() => {
+  authEvents.addHandlers();
+});
+
+module.exports = {
+  getTweets
+};

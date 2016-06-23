@@ -1,0 +1,31 @@
+{
+  "name": "jquery-emoji-picker",
+  "version": "0.2.0",
+  "homepage": "https://github.com/wedgies/jquery-emoji-picker",
+  "authors": [
+    "Wedgies, Inc"
+  ],
+  "keywords": [
+    "emoji",
+    "jquery",
+    "picker"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "25ccdf3dcef4a09f1a930669d40838d7b4c975cf"
+  },
+  "_source": "https://github.com/wedgies/jquery-emoji-picker.git",
+  "_target": "^0.2.0",
+  "_originalSource": "jquery-emoji-picker",
+  "_direct": true
+}
