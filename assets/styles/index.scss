@@ -63,3 +63,19 @@ img.emoji {
   vertical-align: -.1em;
   width: 1em;
 }
+
+::-webkit-input-placeholder { // Chrome/Opera/Safari
+  opacity: .3;
+
+}
+::-moz-placeholder {
+  opacity: .3;
+}
+
+:-ms-input-placeholder {
+  opacity: .3;
+}
+
+:-moz-placeholder {
+  opacity: .3;
+}
