@@ -40,14 +40,17 @@ const changePassword = (data) => {
 };
 
 const sendATweet = (data) => {
+  console.log("sendATweet is being called!");
   return $.ajax({
-    url: app.host + /tweets/,
+    url: app.host + '/tweets',
     method: "POST",
-    header: {
+    dataType: 'json',
+    headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data,
+    data: data
   });
+
 };
 
 

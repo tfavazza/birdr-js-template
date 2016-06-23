@@ -6,15 +6,16 @@ let displayTweets = function(tweets){
 };
 
 const makeTweetData = function () {
+  console.log('Maketweetdata is being called!');
   let JSONified = {
              'tweet': {
                'user_id': 1,
                'content': 'I tweetered!'
          }
        };
+       console.log(JSONified);
        return JSONified;
 };
-
 
 module.exports = {
   displayTweets,
