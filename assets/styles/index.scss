@@ -1,6 +1,45 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  background: #888;
+}
+
+form {
+  margin: 10;
+  text-align: center;
+}
+
+input {
+  height: 30px;
+  width: 400px;
+}
+
+button,
+input,
+textarea {
+  border: 0;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  outline: none;
+  padding: 5px 10px;
+}
+
+#emojiPickerWrap {
+  margin: 10px 0 0;
+}
+
+.field {
+  padding: 20px 0;
+}
+
+textarea {
+  height: 200px;
+  width: 400px;
+
+}
+
 ul.emoji-list * {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -9,17 +48,18 @@ ul.emoji-list * {
 }
 
 ul.emoji-list li {
-  font-size: 36px;
   float: left;
+  font-size: 36px;
   display: inline-block;
-  padding: 2px;
   margin: 4px;
+  padding: 2px;
+
 }
 
 img.emoji {
   cursor: pointer;
   height: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -.1em;
   width: 1em;
-  margin: 0 0.05em 0 0.1em;
-  vertical-align: -0.1em;
 }

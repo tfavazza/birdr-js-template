@@ -12,8 +12,8 @@ const app = require('./app.js');
 let getTweets = function(){
   return $.ajax({
     url: app.host + "/tweets",
-    // method: 'GET',
-    // dataType: 'json'
+    method: 'GET',
+    dataType: 'json'
   }).done(example.displayTweets);
 };
 

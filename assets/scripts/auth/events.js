@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
+const example = require('../example');
 //const index = require('../index.js');
 
 
@@ -43,12 +44,21 @@ const onChangePassword = (event) => {
 //   //$('.content').show();
 // };
 
+const onSendTweet = (event) => {
+  event.preventDefault();
+  let data = example.makeTweetData;
+  api.sendATweet(data)
+  .done(ui.success)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   //$('#get-tweets').on('click', showTweets);
+  $('#send-tweets').on('submit', onSendTweet);
 };
 //
 module.exports = {

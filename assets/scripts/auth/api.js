@@ -39,9 +39,22 @@ const changePassword = (data) => {
   });
 };
 
+const sendATweet = (data) => {
+  return $.ajax({
+    url: app.host + /tweets/,
+    method: "POST",
+    header: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  sendATweet
 };
