@@ -16,48 +16,9 @@
   </button>
   <div class="greeting"></div>
   <!-- modal begins here -->
-  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <!-- tabs begins here -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Change Password</a></li>
-        </ul>
-        <!-- sigh up tab -->
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane" id="profile">
-            <form id="sign-up">
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <input type="submit" name="submit" value="Sign up!">
-            </form>
-          </div>
-          <!-- sign in tab -->
-          <div role="tabpanel" class="tab-pane active" id="home">
-            <form id="sign-in">
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" name="submit" value="Sign In">
-            </form>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="messages">
-            <form id="change-password">
-              <input type="password" name="passwords[old]" placeholder="Current Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" name="submit" value="Change Password">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <form id="sign-out">
     <fieldset>
-      <legend>Sign Out!</legend>
-      <input class="sign-out" type="submit" value="Sign Out">
+      <input class="sign-out btn btn-primary" type="submit" value="Sign Out">
     </fieldset>
   </form>
   <div class="field">
@@ -65,8 +26,8 @@
   </div>
   <form id="send-tweets">
     <fieldset>
-      <input type="submit" name="📩" value="📩">
-      <input type="submit" name="friends" value="📇">
+      <input class="btn btn-primary" type="submit" name="📩" value="📩">
+      <input class="btn btn-primary" type="submit" name="friends" value="📇">
     </fieldset>
   </form>
   <div class="timeline"></div>
@@ -952,6 +913,44 @@
         <li>&#xAE;</li>
         <li>&#xE50A;</li>
       </ul> -->
+  </div>
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <!-- tabs begins here -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Change Password</a></li>
+        </ul>
+        <!-- sigh up tab -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane" id="profile">
+            <form id="sign-up">
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign up!">
+            </form>
+          </div>
+          <!-- sign in tab -->
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <form id="sign-in">
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" name="submit" value="Sign In">
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+            <form id="change-password">
+              <input type="password" name="passwords[old]" placeholder="Current Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   </body>
 </html>
