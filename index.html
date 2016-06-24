@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>🐦R</title>
+  <title>R</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -11,9 +11,11 @@
 </head>
 
 <body class="container-fluid">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">
-    Sign in!
-  </button>
+  <form class="field">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">
+      Sign in!
+    </button>
+  </form>
   <div class="greeting"></div>
   <!-- modal begins here -->
   <form id="sign-out">
@@ -21,22 +23,24 @@
       <input class="sign-out btn btn-primary" type="submit" value="Sign Out">
     </fieldset>
   </form>
+
   <div class="field">
     <input type="text" id="input-custom-size" class="emojiable-option" placeholder="✍🐦⌨">
   </div>
   <form id="send-tweets">
-    <fieldset>
-      <input class="btn btn-primary" type="submit" name="📩" value="📩">
-      <input class="btn btn-primary" type="submit" name="friends" value="📇">
-    </fieldset>
+    <input class="btn btn-primary" type="submit" name="📩" value="📩">
   </form>
+<br>
+  <fieldset>
+    <input class="btn btn-primary" type="submit" name="friends" value="📇">
+  </fieldset>
   <div class="timeline"></div>
   <div class="tweets"></div>
-    <!--<button id="get-tweets">Click</button> -->
+  <!--<button id="get-tweets">Click</button> -->
 
   <div id="every-emoji">
 
-<!--  <body>
+    <!--  <body>
       <ul class="emoji-list content" hidden>
         <li>&#x1F004;</li>
         <li>&#x1F0CF;</li>
@@ -921,7 +925,7 @@
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
           <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Change Password</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Password</a></li>
         </ul>
         <!-- sigh up tab -->
         <div class="tab-content">
@@ -952,5 +956,6 @@
       </div>
     </div>
   </div>
-  </body>
+</body>
+
 </html>
