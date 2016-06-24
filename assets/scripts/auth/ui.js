@@ -40,6 +40,13 @@ const signInSuccess = (data) => {
   $('.modal').modal('hide') ;
 };
 
+const sendTweetSuccess = (data)  => {
+  console.log(data);
+  console.log("sendtweetsuccess data tweet is" + data.tweet.content);
+  let allTweets = require('../templates/tweet.handlebars');
+  $('.tweets').prepend(allTweets(data.tweet));
+  $('#input-custom-size').val('')
+};
 
 
 const signOutSuccess = () => {
@@ -74,6 +81,7 @@ module.exports = {
   failure,
   signInSuccess,
   signOutSuccess,
-  showTweetSuccess
+  showTweetSuccess,
+  sendTweetSuccess,
   //getUsersTweetsSuccess
 };
