@@ -39,8 +39,8 @@ const changePassword = (data) => {
   });
 };
 
-const sendATweet = (data) => {
-  console.log("sendATweet is being called!");
+const postATweet = (data) => {
+  console.log("postATweet is being called!");
   return $.ajax({
     url: app.host + '/tweets',
     method: "POST",
@@ -68,6 +68,6 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  sendATweet,
+  postATweet,
   getTimeLine,
 };

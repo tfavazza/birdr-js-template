@@ -50,7 +50,7 @@ const showTweets = (event) => {
 const onSendTweet = (event) => {
   event.preventDefault();
   let data = example.makeTweetData();
-  api.sendATweet(data)
+  api.postATweet(data)
   .done(ui.success)
   .fail(ui.failure);
 };

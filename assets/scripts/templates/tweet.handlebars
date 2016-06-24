@@ -1,12 +1,9 @@
-<h1> <small>Tweet from: {{tweets.id}}</small></h1></a>
+<h1> <small>Tweet from: {{Object.tweet}}</small></h1></a>
 <h4>Tweet #: {{id}}</h4>
 <div><br>
-  Maybe some tweets?: {{#if content}}
+  Maybe some tweets?:<br> {{#if content}}
     {{content}}
   {{else}}
     tweets are for the week.
   {{/if}}
-  <br><br>
-  <button class="delete-button" data-id="{{id}}">delete</button>
-  <button class="like-button" data-id="{{id}}">like</button>
 </div>

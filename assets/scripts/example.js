@@ -6,11 +6,6 @@ const getTweetText = function(){
  content = $('#input-custom-size').val();
 };
 
-let displayTweets = function(tweets){
-  let allTweets = require('./templates/tweet.handlebars');
-    $('.timeline').append(allTweets(tweets));
-};
-
 const makeTweetData = function () {
   console.log('Maketweetdata is being called!');
   let JSONified = {
@@ -21,6 +16,13 @@ const makeTweetData = function () {
        };
        console.log(JSONified);
        return JSONified;
+};
+
+let displayTweets = function(tweet){
+  console.log("maybe some tweets? " + tweet);
+//   let allTweets = require('./templates/tweet.handlebars');
+     $('.timeline').append(tweet +"</br>");
+//     $('.testtweet').append(makeTweetData().stringify);
 };
 
 module.exports = {

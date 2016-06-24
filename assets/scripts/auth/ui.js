@@ -1,7 +1,8 @@
 'use strict';
 
 const app = require('../app.js');
-const index = require('../index.js');
+const example = require('../example.js');
+
 
 
 
@@ -34,8 +35,13 @@ const signOutSuccess = () => {
 };
 
 const getTimeLineSuccess = (data) => {
-  app.tweets = data.tweets;
-  console.log(app.tweets);
+  console.log("get timelinesuccess " + data.tweets);
+  let tweetArray = data.tweets;
+  console.log("get some tweet content? " + tweetArray[1].content);
+  for(let i=0; i<tweetArray.length; i++) {
+    example.displayTweets(tweetArray[i].content);
+  }
+  console.log("showing how many tweets exist " + tweetArray.length);
 };
 
 
