@@ -35,9 +35,9 @@ const signInSuccess = (data) => {
   showTweetSuccess(data);
   app.user = data.user;
   console.log(app.user);
-  $('.emoji-list').show();
+  $('.emoji-list, #sign-out').show();
   $('.greeting').append("🖐 " + app.user.email + "❗");
-  $('.modal').modal('hide') ;
+  $('.modal').modal('hide');
 };
 
 const sendTweetSuccess = (data)  => {
@@ -45,15 +45,24 @@ const sendTweetSuccess = (data)  => {
   console.log("sendtweetsuccess data tweet is" + data.tweet.content);
   let allTweets = require('../templates/tweet.handlebars');
   $('.tweets').prepend(allTweets(data.tweet));
-  $('#input-custom-size').val('')
+  $('#input-custom-size').val('');
 };
 
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
-  $('.emoji-list, .tweets, .greeting').hide();
+  $('.emoji-list, .tweets, .greeting, #sign-out').hide();
   $('.modal').modal('show');
+};
+
+const showTimelineTweetsSucccess = (data) => {
+  app.tweets = data.tweets;
+  for(let i=app.tweets.length-1; i>-1; i--) {
+  // $('.tweets').append(app.user.email + ": " + app.user.tweets[i].content + '<br>');
+  let allTweets = require('../templates/tweet.handlebars');
+  $('.tweets').append(allTweets(app.tweets[i]));
+}
 };
 
 // const getUsersTweetsSuccess = (data) => {
@@ -83,5 +92,6 @@ module.exports = {
   signOutSuccess,
   showTweetSuccess,
   sendTweetSuccess,
+  showTimelineTweetsSucccess,
   //getUsersTweetsSuccess
 };

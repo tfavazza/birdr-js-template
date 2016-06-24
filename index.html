@@ -11,6 +11,7 @@
 </head>
 
 <body class="container-fluid">
+  <h1>BirdR</h1>
   <form class="field">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">
       Sign in!
@@ -18,7 +19,7 @@
   </form>
   <div>
     <div class="greeting"></div>
-    <form id="sign-out">
+    <form id="sign-out" hidden>
       <fieldset>
         <input class="sign-out btn btn-primary" type="submit" value="Sign Out">
       </fieldset>
@@ -31,9 +32,11 @@
       <input class="btn btn-primary" type="submit" name="📩" value="📩">
     </form>
     <br>
+    <form id="timeline">
     <fieldset>
       <input class="btn btn-primary" type="submit" name="friends" value="📇">
     </fieldset>
+  </form>
     <div class="timeline"></div>
     <div class="tweets"></div>
     <!--<button id="get-tweets">Click</button> -->

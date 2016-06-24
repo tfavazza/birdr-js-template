@@ -39,13 +39,14 @@ const onChangePassword = (event) => {
   .fail(ui.failure);
 };
 
-// const onShowUsersTweets = (event) => {
-//   event.preventDefault();
-//   api.getUserTweets()
-//   .done(ui.getUsersTweetsSuccess)
-//   .fail(ui.failure);
-//   //$('.content').show();
-// };
+const onShowTimelineTweets = (event) => {
+  console.log("onShowTimelineTweets is being called!")
+  event.preventDefault();
+  api.getTimelineTweets()
+  .done(ui.showTimelineTweetsSucccess)
+  .fail(ui.failure);
+  //$('.content').show();
+};
 
 const onSendTweet = (event) => {
   event.preventDefault();
@@ -61,7 +62,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#send-tweets').on('submit', example.getTweetText);
-//  $('#get-tweets').on('click', onShowUsersTweets);
+  $('#timeline').on('submit', onShowTimelineTweets);
   $('#send-tweets').on('submit', onSendTweet);
 
 };

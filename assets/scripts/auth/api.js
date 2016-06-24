@@ -52,16 +52,16 @@ const postATweet = (data) => {
   });
 };
 
-// const getUserTweets = () => {
-//   console.log("getUserTweets is being called!");
-//   return $.ajax({
-//     url: app.host + '/user/' + app.user_id,
-//       method: 'GET',
-//       headers: {
-//         Authorization: 'Token token=' + app.user.token,
-//       },
-//     });
-//   };
+const getTimelineTweets = () => {
+  console.log("getTimelineTweets is being called!");
+  return $.ajax({
+    url: app.host + '/tweets/',
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+    });
+  };
 
 module.exports = {
   signUp,
@@ -69,5 +69,5 @@ module.exports = {
   signOut,
   changePassword,
   postATweet,
-  // getUserTweets,
+  getTimelineTweets,
 };
