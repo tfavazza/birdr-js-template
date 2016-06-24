@@ -18,15 +18,31 @@ const makeTweetData = function () {
        return JSONified;
 };
 
-let displayTweets = function(tweet){
-  console.log("maybe some tweets? " + tweet);
-//   let allTweets = require('./templates/tweet.handlebars');
-     $('.timeline').append(tweet +"</br>");
-//     $('.testtweet').append(makeTweetData().stringify);
+let displayUser = function(tweet) {
+  $('.timeline').append("here is that user: " + tweet +"</br>");
+
 };
+
+ let displayTweets = function(tweet){
+   console.log("what's going to displayTweets? " + tweet);
+//    let allTweets = require('./templates/alltweets.handlebars');
+//  //$('.timeline').append(allTweets(tweet));
+    $('.timeline').append("here is a username: " + tweet +"</br>");
+  };
+
+
+    let collectTweetData = function(tweetArray) {
+      for(let i = tweetArray.length-1; i > -1; i--) {
+        //contentArray[i] = tweetArray[i].content;
+        displayUser(tweetArray[i].user.email);
+        displayTweets(tweetArray[i].content);
+        //displayTweets(tweetArray[i].content);
+      }
+    };
 
 module.exports = {
   displayTweets,
   makeTweetData,
   getTweetText,
+  collectTweetData,
 };
