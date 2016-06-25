@@ -56,6 +56,13 @@ const onSendTweet = (event) => {
   .fail(ui.failure);
 };
 
+const onTweetTextEntered = () =>
+ {
+   if($('#input-custom-size').val().length > 27) {
+     console.log("too big!");
+   }
+ };
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
@@ -64,7 +71,7 @@ const addHandlers = () => {
   $('#send-tweets').on('submit', example.getTweetText);
   $('#timeline').on('submit', onShowTimelineTweets);
   $('#send-tweets').on('submit', onSendTweet);
-
+  $('#input-custom-size').on('focus', onTweetTextEntered);
 };
 //
 module.exports = {
