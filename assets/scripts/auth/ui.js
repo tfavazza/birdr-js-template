@@ -19,24 +19,25 @@ const failure = (error) => {
 };
 
 const showTweetSuccess = (data) => {
+  $('.tweets').text('');
   app.user = data.user;
   let tweets = app.user.tweets;
   console.log(tweets);
   for(let i=tweets.length-1; i>-1; i--) {
   // $('.tweets').append(app.user.email + ": " + app.user.tweets[i].content + '<br>');
   let allTweets = require('../templates/tweet.handlebars');
-
   $('.tweets').append(allTweets(app.user.tweets[i]));
 }
 };
 
 
 const signInSuccess = (data) => {
+  $('.greeting').text(' ');
   showTweetSuccess(data);
   app.user = data.user;
   console.log(app.user);
-  $('.emoji-list, #sign-out').show();
-  $('.greeting').append("🖐 " + app.user.email + "❗");
+  $('.emoji-list, #sign-out, .tweets, .greeting').show();
+  $('.greeting').text("🖐 " + app.user.email + "❗");
   $('.modal').modal('hide');
 };
 
@@ -53,11 +54,13 @@ const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out').hide();
+  $('.emoji-list, .tweets, .greeting').text('');
   $('.modal').modal('show');
 };
 
 const showTimelineTweetsSucccess = (data) => {
   app.tweets = data.tweets;
+  $('.tweets').text(' ');
   for(let i=app.tweets.length-1; i>-1; i--) {
   // $('.tweets').append(app.user.email + ": " + app.user.tweets[i].content + '<br>');
   let allTweets = require('../templates/tweet.handlebars');

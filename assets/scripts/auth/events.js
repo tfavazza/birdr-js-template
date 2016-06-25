@@ -40,7 +40,7 @@ const onChangePassword = (event) => {
 };
 
 const onShowTimelineTweets = (event) => {
-  console.log("onShowTimelineTweets is being called!")
+  console.log("onShowTimelineTweets is being called!");
   event.preventDefault();
   api.getTimelineTweets()
   .done(ui.showTimelineTweetsSucccess)
