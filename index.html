@@ -26,7 +26,7 @@
     </form>
 
     <div class="field">
-      <input type="text" id="input-custom-size" class="emojiable-option" placeholder="✍🐦⌨">
+      <input type="text" id="input-custom-size" class="emojiable-option" value=" " placeholder="✍🐦⌨">
     </div>
     <form id="send-tweets">
       <input class="btn btn-primary" type="submit" name="📩" value="📩">
@@ -934,17 +934,17 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="profile">
             <form id="sign-up">
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input id="signup-email" type="text" name="credentials[email]" placeholder="Email">
+              <input id="signup-password" type="password" name="credentials[password]" placeholder="Password">
+              <input id="signup_passwordconf" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               <input type="submit" name="submit" value="Sign up!">
             </form>
           </div>
           <!-- sign in tab -->
           <div role="tabpanel" class="tab-pane active" id="home">
             <form id="sign-in">
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
+              <input id="signin-email" type="text" name="credentials[email]" placeholder="Email">
+              <input id="signin-password" type="password" name="credentials[password]" placeholder="Password">
               <input type="submit" name="submit" value="Sign In">
             </form>
           </div>

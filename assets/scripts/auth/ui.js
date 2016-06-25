@@ -1,9 +1,8 @@
 'use strict';
 
 const app = require('../app.js');
+const api = require('./api.js');
 //const example = require('../example.js');
-
-
 
 
 const success = (data) => {
@@ -30,7 +29,6 @@ const showTweetSuccess = (data) => {
 }
 };
 
-
 const signInSuccess = (data) => {
   $('.greeting').text(' ');
   showTweetSuccess(data);
@@ -39,6 +37,13 @@ const signInSuccess = (data) => {
   $('.emoji-list, #sign-out, .tweets, .greeting').show();
   $('.greeting').text("🖐 " + app.user.email + "❗");
   $('.modal').modal('hide');
+};
+
+const signUpSuccess = () => {
+  $('#signin-email').val($('#signup-email').val());
+  $('#signin-password').val($('#signup-password').val());
+  $('#sign-in').submit();
+  $('#signin-email, #signup-email, #signin-password, #signup-password, #signup_passwordconf').val('')
 };
 
 const sendTweetSuccess = (data)  => {
@@ -96,5 +101,6 @@ module.exports = {
   showTweetSuccess,
   sendTweetSuccess,
   showTimelineTweetsSucccess,
+  signUpSuccess
   //getUsersTweetsSuccess
 };

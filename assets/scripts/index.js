@@ -4,9 +4,9 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-const example = require('./example.js');
+//const example = require('./example.js');
 const authEvents = require('./auth/events.js');
-const app = require('./app.js');
+//const app = require('./app.js');
 
 
 // let getTweets = function(){
