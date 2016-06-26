@@ -48,11 +48,19 @@ const onShowTimelineTweets = (event) => {
   //$('.content').show();
 };
 
+const onShowMyTweets = (event) => {
+  console.log("onShowMyTweets is being called!");
+  event.preventDefault();
+  api.getMyTweets()
+  .done(ui.showTweetSuccess)
+  .fail(ui.failure);
+};
+
 const onSendTweet = (event) => {
   event.preventDefault();
   let data = example.makeTweetData();
   api.postATweet(data)
-  .done(ui.sendTweetSuccess)
+  .done(ui.showTweetSuccess)
   .fail(ui.failure);
 };
 
@@ -72,6 +80,7 @@ const addHandlers = () => {
   $('#timeline').on('submit', onShowTimelineTweets);
   $('#send-tweets').on('submit', onSendTweet);
   $('#input-custom-size').on('focus', onTweetTextEntered);
+  $('#my-profile').on('submit', onShowMyTweets);
 };
 //
 module.exports = {

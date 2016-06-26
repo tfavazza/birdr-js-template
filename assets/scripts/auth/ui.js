@@ -20,6 +20,7 @@ const failure = (error) => {
 const showTweetSuccess = (data) => {
   $('.tweets').text('');
   app.user = data.user;
+  console.log("app.user is " + app.user);
   let tweets = app.user.tweets;
   console.log(tweets);
   for(let i=tweets.length-1; i>-1; i--) {
@@ -34,7 +35,7 @@ const signInSuccess = (data) => {
   showTweetSuccess(data);
   app.user = data.user;
   console.log(app.user);
-  $('.emoji-list, #sign-out, .tweets, .greeting').show();
+  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox').show();
   $('.greeting').text("🖐 " + app.user.email + "❗");
   $('.modal').modal('hide');
 };
@@ -43,7 +44,7 @@ const signUpSuccess = () => {
   $('#signin-email').val($('#signup-email').val());
   $('#signin-password').val($('#signup-password').val());
   $('#sign-in').submit();
-  $('#signin-email, #signup-email, #signin-password, #signup-password, #signup_passwordconf').val('')
+  $('#signin-email, #signup-email, #signin-password, #signup-password, signup_passwordconf').val('');
 };
 
 const sendTweetSuccess = (data)  => {
@@ -58,7 +59,7 @@ const sendTweetSuccess = (data)  => {
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
-  $('.emoji-list, .tweets, .greeting, #sign-out').hide();
+  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox').hide();
   $('.emoji-list, .tweets, .greeting').text('');
   $('.modal').modal('show');
 };

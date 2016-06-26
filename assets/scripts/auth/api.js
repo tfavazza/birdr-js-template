@@ -63,6 +63,17 @@ const getTimelineTweets = () => {
     });
   };
 
+  const getMyTweets = () => {
+    console.log("getMyTweets is being called!");
+    return $.ajax({
+      url: app.host + '/users/' + app.user.id,
+        method: 'GET',
+        headers: {
+          Authorization: 'Token token=' +app.user.token,
+        },
+    });
+  };
+
 module.exports = {
   signUp,
   signIn,
@@ -70,4 +81,5 @@ module.exports = {
   changePassword,
   postATweet,
   getTimelineTweets,
+  getMyTweets,
 };
