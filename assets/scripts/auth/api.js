@@ -62,14 +62,14 @@ const getTimelineTweets = () => {
       },
     });
   };
-
+//need auth token again?? somehow??
   const getMyTweets = () => {
     console.log("getMyTweets is being called!");
     return $.ajax({
       url: app.host + '/users/' + app.user.id,
         method: 'GET',
         headers: {
-          Authorization: 'Token token=' +app.user.token,
+          Authorization: 'Token token=' + app.user.token,
         },
     });
   };

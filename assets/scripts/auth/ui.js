@@ -30,6 +30,17 @@ const showTweetSuccess = (data) => {
 }
 };
 
+const showMyTweetsSuccess = (data) => {
+  $('.tweets').text('');
+  console.log(data);
+  let tweets = data.user.tweets;
+  console.log(tweets);
+  for(let i=tweets.length-1; i>-1; i--) {
+  let allTweets = require('../templates/tweet.handlebars');
+  $('.tweets').append(allTweets(data.user.tweets[i]));
+}
+};
+
 const signInSuccess = (data) => {
   $('.greeting').text(' ');
   showTweetSuccess(data);
@@ -102,6 +113,7 @@ module.exports = {
   showTweetSuccess,
   sendTweetSuccess,
   showTimelineTweetsSucccess,
-  signUpSuccess
+  signUpSuccess,
+  showMyTweetsSuccess,
   //getUsersTweetsSuccess
 };

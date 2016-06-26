@@ -52,7 +52,7 @@ const onShowMyTweets = (event) => {
   console.log("onShowMyTweets is being called!");
   event.preventDefault();
   api.getMyTweets()
-  .done(ui.showTweetSuccess)
+  .done(ui.showMyTweetsSuccess)
   .fail(ui.failure);
 };
 
