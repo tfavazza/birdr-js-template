@@ -91,6 +91,7 @@ const signOutSuccess = () => {
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
   $('.emoji-list, .tweets, .greeting').text('');
+  $('#input-custom-size').val('');
   $('.modal').modal('show');
   $("#home, #home-tab").addClass("active");  // this deactivates the sign-in tab
   $("#messages, #messages-tab").removeClass("active");  // this activates the password tab
