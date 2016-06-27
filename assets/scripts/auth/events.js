@@ -67,6 +67,9 @@ const onSendTweet = (event) => {
 const onTweetTextEntered = () =>
  {
    if($('#input-custom-size').val().length > 27) {
+     var input = document.getElementById('input-custom-size');
+     input.value = input.value.slice(0, -2);
+
      console.log("too big!");
    }
  };
