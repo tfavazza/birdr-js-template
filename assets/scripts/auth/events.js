@@ -40,7 +40,7 @@ const onChangePassword = (event) => {
 };
 
 const onShowTimelineTweets = (event) => {
-  console.log("onShowTimelineTweets is being called!");
+  //console.log("onShowTimelineTweets is being called!");
   event.preventDefault();
   api.getTimelineTweets()
   .done(ui.showTimelineTweetsSucccess)
@@ -49,7 +49,7 @@ const onShowTimelineTweets = (event) => {
 };
 
 const onShowMyTweets = (event) => {
-  console.log("onShowMyTweets is being called!");
+  //console.log("onShowMyTweets is being called!");
   event.preventDefault();
   api.getMyTweets()
   .done(ui.showMyTweetsSuccess)
@@ -70,7 +70,7 @@ const onTweetTextEntered = () =>
      var input = document.getElementById('input-custom-size');
      input.value = input.value.slice(0, -2);
 
-     console.log("too big!");
+     //console.log("too big!");
    }
  };
 

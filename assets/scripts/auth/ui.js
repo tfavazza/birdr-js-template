@@ -7,22 +7,23 @@ const api = require('./api.js');
 
 const success = (data) => {
   if (data) {
-    console.log(data);
+    //console.log(data);
   } else {
-    console.log('Success');
+    //console.log('Success');
   }
 };
 
 const failure = (error) => {
+  $('.error').text("I'm sorry, something went wrong.");
   console.error(error);
 };
 
 const showTweetSuccess = (data) => {
   $('.tweets').text('');
   app.user = data.user;
-  console.log("app.user is " + app.user);
+  //console.log("app.user is " + app.user);
   let tweets = app.user.tweets;
-  console.log(tweets);
+  //console.log(tweets);
   for(let i=tweets.length-1; i>-1; i--) {
   // $('.tweets').append(app.user.email + ": " + app.user.tweets[i].content + '<br>');
   let allTweets = require('../templates/tweet.handlebars');
@@ -32,9 +33,9 @@ const showTweetSuccess = (data) => {
 
 const showMyTweetsSuccess = (data) => {
   $('.tweets').text('');
-  console.log(data);
+  //console.log(data);
   let tweets = data.user.tweets;
-  console.log(tweets);
+  //console.log(tweets);
   for(let i=tweets.length-1; i>-1; i--) {
   let allTweets = require('../templates/tweet.handlebars');
   $('.tweets').append(allTweets(data.user.tweets[i]));
@@ -47,8 +48,9 @@ const signInSuccess = (data) => {
   $('.greeting').text(' ');
   showTweetSuccess(data);
   app.user = data.user;
-  console.log(app.user);
-  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons').show();
+  //console.log(app.user);
+  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
+  $('#my-profile').hide();
   $('.greeting').text("🖐 " + app.user.email + "❗");
   $('.modal').modal('hide');
 };
@@ -61,8 +63,8 @@ const signUpSuccess = () => {
 };
 
 const sendTweetSuccess = (data)  => {
-  console.log(data);
-  console.log("sendtweetsuccess data tweet is" + data.tweet.content);
+  //console.log(data);
+  //console.log("sendtweetsuccess data tweet is" + data.tweet.content);
   let allTweets = require('../templates/tweet.handlebars');
   $('.tweets').prepend(allTweets(data.tweet));
   $('#input-custom-size').val('');
@@ -70,11 +72,11 @@ const sendTweetSuccess = (data)  => {
 
 
 const signOutSuccess = () => {
-  console.log('User signed out successfully');
+  //console.log('User signed out successfully');
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
   $('.emoji-list, .tweets, .greeting').text('');
-  $('.modal').modal('show');
+  $('.modal,').modal('show');
 };
 
 const showTimelineTweetsSucccess = (data) => {

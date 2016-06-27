@@ -7,14 +7,14 @@ const getTweetText = function(){
 };
 
 const makeTweetData = function () {
-  console.log('Maketweetdata is being called!');
+  //console.log('Maketweetdata is being called!');
   let JSONified = {
              'tweet': {
                'user_id': app.user.id,
                'content': content
          }
        };
-       console.log(JSONified);
+       //console.log(JSONified);
        return JSONified;
 };
 
@@ -24,7 +24,7 @@ let displayUser = function(tweet) {
 };
 
  let displayTweets = function(tweet){
-   console.log("what's going to displayTweets? " + tweet);
+   //console.log("what's going to displayTweets? " + tweet);
 //    let allTweets = require('./templates/alltweets.handlebars');
 //  //$('.timeline').append(allTweets(tweet));
     $('.timeline').append("here is a username: " + tweet +"</br>");

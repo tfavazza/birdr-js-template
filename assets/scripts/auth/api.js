@@ -40,7 +40,7 @@ const changePassword = (data) => {
 };
 
 const postATweet = (data) => {
-  console.log("postATweet is being called!");
+  //console.log("postATweet is being called!");
   return $.ajax({
     url: app.host + '/tweets',
     method: "POST",
@@ -53,7 +53,7 @@ const postATweet = (data) => {
 };
 
 const getTimelineTweets = () => {
-  console.log("getTimelineTweets is being called!");
+  //console.log("getTimelineTweets is being called!");
   return $.ajax({
     url: app.host + '/tweets/',
       method: 'GET',
@@ -64,7 +64,7 @@ const getTimelineTweets = () => {
   };
 
   const getMyTweets = () => {
-    console.log("getMyTweets is being called!");
+    //console.log("getMyTweets is being called!");
     return $.ajax({
       url: app.host + '/users/' + app.user.id,
         method: 'GET',
