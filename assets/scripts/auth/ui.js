@@ -38,6 +38,8 @@ const showMyTweetsSuccess = (data) => {
   for(let i=tweets.length-1; i>-1; i--) {
   let allTweets = require('../templates/tweet.handlebars');
   $('.tweets').append(allTweets(data.user.tweets[i]));
+  $('#my-profile').hide();
+  $('#timeline').show();
 }
 };
 
@@ -82,6 +84,8 @@ const showTimelineTweetsSucccess = (data) => {
   // $('.tweets').append(app.user.email + ": " + app.user.tweets[i].content + '<br>');
   let allTweets = require('../templates/tweet.handlebars');
   $('.tweets').append(allTweets(app.tweets[i]));
+  $('#my-profile').show();
+  $('#timeline').hide();
 }
 };
 
