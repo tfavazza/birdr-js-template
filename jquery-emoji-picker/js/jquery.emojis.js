@@ -2217,7 +2217,7 @@ $.fn.emojiPicker.emojis = [
   },
   {
     "name": "new_moon_with_face",
-    "unicode": {"apple":"", "google":"1F31A", "twitter":"1F31A"},
+    "unicode": {"apple":"1F31A", "google":"1F31A", "twitter":"1F31A"},
     "shortcode": "new_moon_with_face",
     "description": "NEW MOON WITH FACE",
     "category": "nature"

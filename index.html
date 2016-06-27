@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>®</title>
+  <title>&#xae;&#xfe0f;</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -19,19 +19,20 @@
     </button>
   </form>
   <div id="hide-all-buttons" hidden>
-    <div class="greeting"></div>
+    <h2><div class="greeting"></div></h2>
     <form id="sign-out" hidden>
       <fieldset>
         <input class="sign-out btn btn-primary" type="submit" value="Sign Out">
       </fieldset>
     </form>
-    <!-- <div id="tweetbox" hidden> -->
     <div class="field" id="tweetbox">
       <input type="text" maxlength="28" size="28" id="input-custom-size" class="emojiable-option" placeholder="&#x270d;&#xfe0f;🐥">
     </div>
+    <div>
     <form id="send-tweets">
       <input class="btn btn-primary" type="submit" name="📩" value="📩">
     </form>
+  </div>
     <form id="timeline"><br>
     <fieldset>
       <input class="btn btn-primary" type="submit" name="friends" value="📇">
@@ -45,8 +46,6 @@
 
     <div class="timeline"></div>
     <div class="tweets"></div>
-    <!--<button id="get-tweets">Click</button> -->
-  <!-- </div> -->
 </div>
 
   <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -54,11 +53,11 @@
       <div class="modal-content">
         <!-- tabs begins here -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">&#x27a1;&#xfe0f;</a></li>
+          <li id="home-tab"role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">&#x27a1;&#xfe0f;</a></li>
           <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">🆕</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">🔑</a></li>
+          <li id="messages-tab" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">🔑</a></li>
         </ul>
-        <!-- sigh up tab -->
+        <!-- sign up tab -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="profile">
             <form id="sign-up">

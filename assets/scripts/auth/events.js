@@ -75,7 +75,6 @@ const onTweetTextEntered = () =>
  };
 
  const removeNonEmojis = () => {
-   console.log($('#input-custom-size').val());
    var input = document.getElementById('input-custom-size');
    input.value = input.value.replace(/[A-Za-z0-9$-/:-?@#{-~!"^_`\[\]]+/g, '');
 };

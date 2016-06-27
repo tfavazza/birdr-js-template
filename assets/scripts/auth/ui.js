@@ -59,8 +59,12 @@ const signInSuccess = (data) => {
   //console.log(app.user);
   $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
   $('#my-profile').hide();
-  $('.greeting').text("🖐 " + app.user.email + "❗");
+  $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
+  $('#signin-email, #signin-password').val('');
+  $("#home, #home-tab").removeClass("active");  // this deactivates the sign-in tab
+  $("#messages, #messages-tab").addClass("active");  // this activates the password tab
+
 };
 
 const signUpSuccess = () => {
@@ -87,7 +91,10 @@ const signOutSuccess = () => {
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
   $('.emoji-list, .tweets, .greeting').text('');
-  $('.modal,').modal('show');
+  $('.modal').modal('show');
+  $("#home, #home-tab").addClass("active");  // this deactivates the sign-in tab
+  $("#messages, #messages-tab").removeClass("active");  // this activates the password tab
+
 };
 
 const showTimelineTweetsSucccess = (data) => {
