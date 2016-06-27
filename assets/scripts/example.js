@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('./app.js');
+const ui = require('./auth/ui.js');
 let content = '';
 const getTweetText = function(){
  content = $('#input-custom-size').val();
@@ -8,6 +9,11 @@ const getTweetText = function(){
 
 const makeTweetData = function () {
   //console.log('Maketweetdata is being called!');
+  if(content === "") {
+    console.log("nope!");
+    ui.failure();
+    return false;
+  }
   let JSONified = {
              'tweet': {
                'user_id': app.user.id,
