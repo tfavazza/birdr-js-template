@@ -46,7 +46,7 @@ const signInSuccess = (data) => {
   showTweetSuccess(data);
   app.user = data.user;
   console.log(app.user);
-  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox').show();
+  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons').show();
   $('.greeting').text("🖐 " + app.user.email + "❗");
   $('.modal').modal('hide');
 };
@@ -70,7 +70,7 @@ const sendTweetSuccess = (data)  => {
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
-  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox').hide();
+  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
   $('.emoji-list, .tweets, .greeting').text('');
   $('.modal').modal('show');
 };
