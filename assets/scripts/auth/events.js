@@ -74,6 +74,12 @@ const onTweetTextEntered = () =>
    }
  };
 
+ const removeNonEmojis = () => {
+   console.log($('#input-custom-size').val());
+   var input = document.getElementById('input-custom-size');
+   input.value = input.value.replace(/[A-Za-z0-9$-/:-?@#{-~!"^_`\[\]]+/g, '');
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
@@ -84,6 +90,7 @@ const addHandlers = () => {
   $('#send-tweets').on('submit', onSendTweet);
   $('#input-custom-size').on('focus', onTweetTextEntered);
   $('#my-profile').on('submit', onShowMyTweets);
+  $('#input-custom-size').on('input', removeNonEmojis);
 };
 //
 module.exports = {

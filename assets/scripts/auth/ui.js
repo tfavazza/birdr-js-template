@@ -4,8 +4,12 @@ const app = require('../app.js');
 const api = require('./api.js');
 //const example = require('../example.js');
 
+const anySuccess = () => {
+  $('.error').hide();
+};
 
 const success = (data) => {
+  anySuccess();
   if (data) {
     //console.log(data);
   } else {
@@ -14,11 +18,13 @@ const success = (data) => {
 };
 
 const failure = (error) => {
+  $('.error').show();
   $('.error').text("I'm sorry, something went wrong.");
   console.error(error);
 };
 
 const showTweetSuccess = (data) => {
+  anySuccess();
   $('.tweets').text('');
   app.user = data.user;
   //console.log("app.user is " + app.user);
@@ -32,6 +38,7 @@ const showTweetSuccess = (data) => {
 };
 
 const showMyTweetsSuccess = (data) => {
+  anySuccess();
   $('.tweets').text('');
   //console.log(data);
   let tweets = data.user.tweets;
@@ -45,6 +52,7 @@ const showMyTweetsSuccess = (data) => {
 };
 
 const signInSuccess = (data) => {
+  anySuccess();
   $('.greeting').text(' ');
   showTweetSuccess(data);
   app.user = data.user;
@@ -56,6 +64,7 @@ const signInSuccess = (data) => {
 };
 
 const signUpSuccess = () => {
+  anySuccess();
   $('#signin-email').val($('#signup-email').val());
   $('#signin-password').val($('#signup-password').val());
   $('#sign-in').submit();
@@ -63,6 +72,7 @@ const signUpSuccess = () => {
 };
 
 const sendTweetSuccess = (data)  => {
+  anySuccess();
   //console.log(data);
   //console.log("sendtweetsuccess data tweet is" + data.tweet.content);
   let allTweets = require('../templates/tweet.handlebars');
@@ -72,6 +82,7 @@ const sendTweetSuccess = (data)  => {
 
 
 const signOutSuccess = () => {
+  anySuccess();
   //console.log('User signed out successfully');
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
@@ -80,6 +91,7 @@ const signOutSuccess = () => {
 };
 
 const showTimelineTweetsSucccess = (data) => {
+  anySuccess();
   app.tweets = data.tweets;
   $('.tweets').text(' ');
   for(let i=app.tweets.length-1; i>-1; i--) {
