@@ -93,3 +93,17 @@ h1 {
 .welcome-screen {
   font-size: 6em;
 }
+
+@media (max-width: 560px) {
+  body {
+    font-size: 200%;
+    zoom: 100%;
+  }
+  .welcome-screen {
+    font-size: 180%;
+  }
+
+  .bd-example-modal-sm {
+    font-size: 90%;
+  }
+}
