@@ -17,5 +17,8 @@
     "bower_components",
     "Gruntfile.js",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "jquery-emoji-picker": "^0.2.0"
+  }
 }
