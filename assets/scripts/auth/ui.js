@@ -69,7 +69,7 @@ const signInSuccess = (data) => {
   $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
   $('#signin-email, #signin-password').val('');
-  $("#home, #home-tab").removeClass("active");
+  $("#home, #home-tab, #profile, #profile-tab").removeClass("active");
   $("#messages, #messages-tab").addClass("active");
 
 };
