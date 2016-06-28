@@ -10007,6 +10007,7 @@
 	  showTweetSuccess(data);
 	  app.user = data.user;
 	  //console.log(app.user);
+	  $('.welcome-screen').hide();
 	  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
 	  //$('#my-profile, #home, #home-tab, #profile, #profile-tab').hide();
 	  $('.greeting').text("👋 " + app.user.email + "❗");
@@ -10037,7 +10038,8 @@
 	  anySuccess();
 	  console.log('User signed out successfully');
 	  app.user = null;
-	  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
+	  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons, #my-profile').hide();
+	  $('.welcome-screen').show();
 	  $('.emoji-list, .tweets, .greeting').text('');
 	  $('#input-custom-size').val('');
 	  //$('#home, #home-tab, #profile, #profile-tab').toggle();
@@ -10108,17 +10110,13 @@
 	},"3":function(container,depth0,helpers,partials,data) {
 	    return "      You\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-	    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+	    var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
-	  return "<h1 class=\"prettytweets\"> <small>\n"
+	  return "<h1 class=\"prettytweets panel panel-default\"> <small></h1>\n  <h1><div class=\"panel-body well well-sm\">\n"
 	    + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.email : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "")
 	    + "  🗣:\n\n  "
-	    + alias4(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper)))
-	    + "</small></h1></a>\n\n\n<!-- Cool idea??\n<a href=\"https://warm-brushlands-74801.herokuapp.com/tweets/"
-	    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-	    + "\"></a>\nor <a href=\"https://warm-brushlands-74801.herokuapp.com/user/"
-	    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-	    + "/tweets\">???</a> -->\n";
+	    + container.escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper)))
+	    + "</small></div></h1></div>\n";
 	},"useData":true});
 
 /***/ },
