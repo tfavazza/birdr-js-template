@@ -76,7 +76,7 @@ const onTweetTextEntered = () =>
 
  const removeNonEmojis = () => {
    var input = document.getElementById('input-custom-size');
-   input.value = input.value.replace(/[A-Za-z0-9$-/:-?@#{-~!"^_`\[\]\s]+/g, '');
+   input.value = input.value.replace(/[A-Za-z0-9$-/:-?@#{-~!"^_`\[\]\s\\]+/g, '');
 };
 
 const addHandlers = () => {
@@ -90,6 +90,7 @@ const addHandlers = () => {
   $('#input-custom-size').on('focus', onTweetTextEntered);
   $('#my-profile').on('submit', onShowMyTweets);
   $('#input-custom-size').on('input', removeNonEmojis);
+  //$(document).on('input', twemoji.parse(document.body));
 };
 //
 module.exports = {

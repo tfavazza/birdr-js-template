@@ -64,6 +64,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
   //console.log(app.user);
   $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
+  $('.welcome-screen').hide();
   //$('#my-profile, #home, #home-tab, #profile, #profile-tab').hide();
   $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
@@ -95,7 +96,8 @@ const signOutSuccess = () => {
   anySuccess();
   console.log('User signed out successfully');
   app.user = null;
-  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
+  $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons, #my-profile').hide();
+  $('.welcome-screen').show();
   $('.emoji-list, .tweets, .greeting').text('');
   $('#input-custom-size').val('');
   //$('#home, #home-tab, #profile, #profile-tab').toggle();
