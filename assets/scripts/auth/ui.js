@@ -63,8 +63,8 @@ const signInSuccess = (data) => {
   showTweetSuccess(data);
   app.user = data.user;
   //console.log(app.user);
-  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
   $('.welcome-screen').hide();
+  $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
   //$('#my-profile, #home, #home-tab, #profile, #profile-tab').hide();
   $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
