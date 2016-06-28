@@ -35,7 +35,7 @@ const onChangePassword = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.success)
+  .done(ui.changePasswordSuccess)
   .fail(ui.failure);
 };
 

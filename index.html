@@ -54,7 +54,7 @@
         <!-- tabs begins here -->
         <ul class="nav nav-tabs" role="tablist">
           <li id="home-tab"role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">&#x27a1;&#xfe0f;</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">🆕</a></li>
+          <li id="profile-tab" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">🆕</a></li>
           <li id="messages-tab" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">🔑</a></li>
         </ul>
         <!-- sign up tab -->
@@ -65,6 +65,7 @@
               <input id="signup-password" type="password" name="credentials[password]" placeholder="Password">
               <input id="signup_passwordconf" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               <input type="submit" name="submit" value="Sign up!">
+              <div class="error"></div>
             </form>
           </div>
           <!-- sign in tab -->
@@ -73,13 +74,16 @@
               <input id="signin-email" type="text" name="credentials[email]" placeholder="Username">
               <input id="signin-password" type="password" name="credentials[password]" placeholder="Password">
               <input type="submit" name="submit" value="Sign In">
+              <div class="error"></div>
             </form>
           </div>
+          <!-- change password tab -->
           <div role="tabpanel" class="tab-pane" id="messages">
             <form id="change-password">
-              <input type="password" name="passwords[old]" placeholder="Current Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input id="password-old" type="password" name="passwords[old]" placeholder="Current Password">
+              <input id="password-new" type="password" name="passwords[new]" placeholder="New Password">
               <input type="submit" name="submit" value="Change Password">
+              <div class="error"></div>
             </form>
           </div>
         </div>

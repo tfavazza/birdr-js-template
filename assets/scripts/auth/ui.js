@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app.js');
-const api = require('./api.js');
+//const api = require('./api.js');
 //const example = require('../example.js');
 
 const anySuccess = () => {
@@ -15,6 +15,12 @@ const success = (data) => {
   } else {
     //console.log('Success');
   }
+};
+
+const changePasswordSuccess = () => {
+  anySuccess();
+  $('.modal').modal('hide');
+  $('#password-old, #password-new').val("");
 };
 
 const failure = (error) => {
@@ -58,12 +64,12 @@ const signInSuccess = (data) => {
   app.user = data.user;
   //console.log(app.user);
   $('.emoji-list, #sign-out, .tweets, .greeting, .tweetbox, #hide-all-buttons, #timeline').show();
-  $('#my-profile').hide();
+  //$('#my-profile, #home, #home-tab, #profile, #profile-tab').hide();
   $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
   $('#signin-email, #signin-password').val('');
-  $("#home, #home-tab").removeClass("active");  // this deactivates the sign-in tab
-  $("#messages, #messages-tab").addClass("active");  // this activates the password tab
+  // $("#home, #home-tab").removeClass("active");
+  // $("#messages, #messages-tab").addClass("active");
 
 };
 
@@ -72,7 +78,7 @@ const signUpSuccess = () => {
   $('#signin-email').val($('#signup-email').val());
   $('#signin-password').val($('#signup-password').val());
   $('#sign-in').submit();
-  $('#signin-email, #signup-email, #signin-password, #signup-password, signup_passwordconf').val('');
+  $('#signin-email, #signup-email, #signin-password, #signup-password, #signup_passwordconf').val('');
 };
 
 const sendTweetSuccess = (data)  => {
@@ -87,15 +93,15 @@ const sendTweetSuccess = (data)  => {
 
 const signOutSuccess = () => {
   anySuccess();
-  //console.log('User signed out successfully');
+  console.log('User signed out successfully');
   app.user = null;
   $('.emoji-list, .tweets, .greeting, #sign-out, .tweetbox, #hide-all-buttons').hide();
   $('.emoji-list, .tweets, .greeting').text('');
   $('#input-custom-size').val('');
+  //$('#home, #home-tab, #profile, #profile-tab').toggle();
+  // $("#messages, #messages-tab, #profile, #profile-tab").removeClass("active");
+  // $("#home, #home-tab").addClass("active");
   $('.modal').modal('show');
-  $("#home, #home-tab").addClass("active");  // this deactivates the sign-in tab
-  $("#messages, #messages-tab").removeClass("active");  // this activates the password tab
-
 };
 
 const showTimelineTweetsSucccess = (data) => {
@@ -141,5 +147,6 @@ module.exports = {
   showTimelineTweetsSucccess,
   signUpSuccess,
   showMyTweetsSuccess,
+  changePasswordSuccess
   //getUsersTweetsSuccess
 };
