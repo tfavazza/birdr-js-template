@@ -10013,8 +10013,8 @@
 	  $('.greeting').text("👋 " + app.user.email + "❗");
 	  $('.modal').modal('hide');
 	  $('#signin-email, #signin-password').val('');
-	  // $("#home, #home-tab").removeClass("active");
-	  // $("#messages, #messages-tab").addClass("active");
+	  $("#home, #home-tab, #profile, #profile-tab").removeClass("active");
+	  $("#messages, #messages-tab").addClass("active");
 	};
 
 	var signUpSuccess = function signUpSuccess() {
@@ -10043,8 +10043,8 @@
 	  $('.emoji-list, .tweets, .greeting').text('');
 	  $('#input-custom-size').val('');
 	  //$('#home, #home-tab, #profile, #profile-tab').toggle();
-	  // $("#messages, #messages-tab, #profile, #profile-tab").removeClass("active");
-	  // $("#home, #home-tab").addClass("active");
+	  $("#messages, #messages-tab").removeClass("active");
+	  $("#home, #home-tab").addClass("active");
 	  $('.modal').modal('show');
 	};
 
@@ -10112,11 +10112,11 @@
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
-	  return "<h1 class=\"prettytweets panel panel-default\"> <small></h1>\n  <h1><div class=\"panel-body well well-sm\">\n"
+	  return "<h1 class=\"prettytweets panel panel-default\"><small>\n  <div class=\"panel-body\">\n"
 	    + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.user : depth0)) != null ? stack1.email : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "")
-	    + "  🗣:\n\n  "
+	    + "  🗣: "
 	    + container.escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper)))
-	    + "</small></div></h1></div>\n";
+	    + "</small></div></h1>\n";
 	},"useData":true});
 
 /***/ },
