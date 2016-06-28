@@ -69,8 +69,8 @@ const signInSuccess = (data) => {
   $('.greeting').text("👋 " + app.user.email + "❗");
   $('.modal').modal('hide');
   $('#signin-email, #signin-password').val('');
-  // $("#home, #home-tab").removeClass("active");
-  // $("#messages, #messages-tab").addClass("active");
+  $("#home, #home-tab").removeClass("active");
+  $("#messages, #messages-tab").addClass("active");
 
 };
 
@@ -101,8 +101,8 @@ const signOutSuccess = () => {
   $('.emoji-list, .tweets, .greeting').text('');
   $('#input-custom-size').val('');
   //$('#home, #home-tab, #profile, #profile-tab').toggle();
-  // $("#messages, #messages-tab, #profile, #profile-tab").removeClass("active");
-  // $("#home, #home-tab").addClass("active");
+  $("#messages, #messages-tab").removeClass("active");
+  $("#home, #home-tab").addClass("active");
   $('.modal').modal('show');
 };
 
