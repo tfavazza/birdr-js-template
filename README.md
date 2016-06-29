@@ -11,6 +11,6 @@ mostly from Bootstrap, and chirps are formatted using Handlebars.
 Future versions will include Friend Lists and the ability to delete chirps. Time
 constraints for the project's due date forced these features to be cut.
 
-User stories are posted [here]() and wireframes are [here]().
+User stories and wireframes are posted [here](http://imgur.com/a/TnikA).
 
 Emoji Picker jQuery plugin by [Wedgies](https://github.com/wedgies/jquery-emoji-picker)
